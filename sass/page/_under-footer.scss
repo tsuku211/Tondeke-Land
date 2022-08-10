@@ -1,0 +1,19 @@
+@use '../config/' as c;
+
+// ========================================================================
+// under-footer
+// ========================================================================
+
+.under-footer{
+    margin-top: 100px;
+    @include c.mq(sm) {
+      margin-top: 0;
+    }
+  }
+  
+  .complete-footer {
+    margin-top: 120px;
+    @include c.mq(md) {
+      margin-top: 40px;
+    }
+  }

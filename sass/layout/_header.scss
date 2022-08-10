@@ -1,0 +1,249 @@
+@use '../config/' as c;
+
+// ========================================================================
+// header
+// ========================================================================
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.5s;
+  
+    &.is-active {
+      background-color: #fff;
+    }
+  }
+  
+  .header-nav {
+    display: flex;
+    align-items: center;
+    max-width: 1440px;
+    height: 100px;
+    padding: 0 40px;
+    margin: 0 auto;
+    font-weight: normal;
+    font-family: 'Lexend Peta', sans-serif;
+    @include c.mq(lg) {
+      padding: 0 30px;
+    }
+    @include c.mq(sm) {
+      height: 70px;
+      padding: 0px 20px;
+    }
+  
+    &__logo {
+      width: 272px;
+      @include c.mq(md) {
+        width: 192px;
+      }
+     
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__menu {
+      display: flex;
+      margin-left: auto;
+      @include c.mq(lg) {
+        display: none;
+      }
+    }
+  
+    &__item {
+      position: relative;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+  
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        height: 2px;
+        background-color: c.$accent-color;
+        transition: transform 0.3s;
+        transform: scale(0, 1);
+        transform-origin: left top;
+      }
+  
+      &:hover::after {
+        transform: scale(1, 1);
+      }
+  
+      &:not(:first-child) {
+        margin-left: 32px;
+      }
+  
+      a {
+      }
+  
+      span {
+        display: block;
+        margin-top: 3px;
+        font-size: 11px;
+        font-weight: bold;
+        font-family: '游ゴシック体', YuGothic, '游ゴシック Medium',
+          'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', sans-serif;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+  
+  .drawer-icon {
+    position: fixed;
+    top: 36px;
+    right: 30px;
+    z-index: 22;
+    display: none;
+    transition: transform 0.5s ease 0s;
+    @include c.mq(lg) {
+      display: block;
+    }
+    @include c.mq(sm) {
+      top: 21px;
+      right: 20px;
+    }
+  
+    &__box {
+      position: relative;
+      width: 28px;
+      height: 28px;
+  
+      &:hover {
+        .drawer-icon__dot:nth-child(2) {
+          transform: scale(5, 1);
+        }
+      }
+    }
+  
+    &__row {
+      position: absolute;
+      left: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: 5px;
+    }
+  
+    &__row:first-child {
+      top: 0;
+    }
+  
+    &__row:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    &__row:last-child {
+      bottom: 0;
+    }
+  
+    &__dot {
+      width: 5px;
+      height: 100%;
+      background-color: c.$font-color;
+      transition: transform 0.1s;
+    }
+  }
+  
+  .drawer-contents {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    background-color: c.$font-color;
+    transition: display 1s;
+    visibility: hidden;
+    opacity: 0;
+    /* ふわっと表示 */
+    transition: 0.3s ease-in-out;
+  
+    &.is-active {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    &__logo {
+      padding: 36px 0 0 30px;
+      font-size: 28px;
+      color: #fff;
+      font-family: 'Lexend Peta', sans-serif;
+      font-weight: normal;
+      @include c.mq(sm) {
+        padding: 21px 0 0 20px;
+        font-size: 20px;
+      }
+    }
+  
+    &__box {
+      position: fixed;
+      top: 36px;
+      right: 30px;
+      width: 23px;
+      height: 23px;
+      @include c.mq(sm) {
+        top: 21px;
+        right: 20px;
+      }
+    }
+  
+    &__icon {
+      position: relative;
+  
+      &-bar1,
+      &-bar2 {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 28px;
+        height: 5px;
+        background: #fff;
+      }
+  
+      &-bar1 {
+        transform: rotate(45deg);
+      }
+  
+      &-bar2 {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  
+  .drawer-content {
+    margin-top: 95px;
+  
+    &__item {
+      font-size: 32px;
+      color: #fff;
+      font-family: 'Lexend Peta', sans-serif;
+  
+      a {
+        display: block;
+        padding: 25px 0 25px 30px;
+        @include c.mq(sm) {
+          padding: 25px 0 25px 20px;
+        }
+      }
+  
+      span {
+        display: block;
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: '游ゴシック体', YuGothic, '游ゴシック Medium',
+          'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', sans-serif;
+      }
+    }
+  }

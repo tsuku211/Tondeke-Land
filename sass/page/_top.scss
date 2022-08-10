@@ -1,0 +1,867 @@
+@use '../config/' as c;
+
+// ========================================================================
+// fv
+// ========================================================================
+
+.fv {
+    padding: 100px 0 120px;
+    background: url(../img/fv-bg.png) no-repeat center center / cover;
+    @include c.mq(sm) {
+      padding: 70px 0 0 0;
+    }
+  
+    &-inner {
+      display: flex;
+      align-items: center;
+      max-width: 1240px;
+      height: 700px;
+      @include c.mq(lg) {
+        height: 500px;
+      }
+      @include c.mq(md) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        height: auto;
+      }
+    }
+  
+    &__left {
+      width: 480px;
+      flex-shrink: 0;
+      @include c.mq(lg) {
+       width: 400px;
+      }
+      @include c.mq(md) {
+        width: 100%;
+      }
+    }
+  
+    &__right {
+      width: 640px;
+      margin: 0 0 30px auto;
+      @include c.mq(lg) {
+        max-width: 480px;
+      }
+      @include c.mq(md) {
+        width: 100%;
+        max-width: 570px;
+        margin: 0 auto;
+      }
+      @include c.mq(sm) {
+  
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__title {
+  
+      .main-title {
+        position: relative;
+        display: inline-block;
+        background-color: transparent;
+        color: transparent;
+        font-size: 55px;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        font-feature-settings: "palt";
+        transition: color 0ms 450ms, background-color 0ms 450ms;
+        overflow: hidden;
+        @include c.mq(lg) {
+          font-size: 50px;
+        }
+        @include c.mq(md) {
+          font-size: 45px;
+        }
+        @include c.mq(sm) {
+          font-size: 34px;
+        }
+  
+        &:first-child {
+          padding: 11px 8px 7px 12px;
+        }
+  
+        &:nth-of-type(2n) {
+          padding: 12px 13px 7px 13px;
+          margin-top: 20px;
+        }
+  
+        &::after {
+          background: c.$accent-color;
+          bottom: 0;
+          content: '';
+          display: block;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          transform: translate(-101%, 0);
+        }
+  
+        &.is-animated {
+          color: #fff;
+          background-color: c.$accent-color;
+  
+          &::after {
+            animation: mask-bg 1.2s cubic-bezier(0.8, 0, 0.170, 1);
+          }
+        }
+      }
+    }
+  
+    &__subtitle {
+      margin-top: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 43px;
+      @include c.mq(lg) {
+        font-size: 20px;
+      }
+      @include c.mq(md) {
+        font-size: 18px;
+        line-height: 35px;
+      }
+      @include c.mq(sm) {
+        margin-top: 18px;
+        font-size: 16px;
+        line-height: 28.8px;
+      }
+    }
+  }
+  
+  @keyframes mask-bg {
+    0% {
+      transform: translate(-101%, 0)
+    }
+    40%, 60% {
+      transform: translate(0%, 0)
+    }
+    100% {
+      transform: translate(101%, 0)
+    }
+  }
+  
+  // ========================================================================
+  // works
+  // ========================================================================
+  
+  .works {
+    @include c.mq(sm) {
+      margin-top: 120px;
+    }
+  
+    &__title {
+      text-align: center;
+    }
+  
+    &__btn {
+      margin-top: 80px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.15em;
+      @include c.mq(sm) {
+        margin-top: 40px;
+        font-size: 14px;
+      }
+  
+      a {
+        display: inline-block;
+      }
+  
+      span {
+        position: relative;
+        display: inline-block;
+        padding: 16px (50 + 64px) 16px 0;
+        @include c.mq(sm) {
+          padding: 7px (10 + 55px) 7px 0;
+        }
+  
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 24px;
+          display: inline-block;
+          width: 70px;
+          height: 7px;
+          background: url(../img/works-arrow.png) no-repeat center center /
+            contain;
+          transform: translateY(-50%);
+          transition: right 0.3s;
+          z-index: 5;
+          @include c.mq(sm) {
+            right: 17px;
+            width: 40px;
+            height: 5px;
+          }
+        }
+  
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          background: transparent;
+          border: 1px solid c.$accent-color;
+          border-radius: 50px;
+          transform: translateY(-50%);
+          transition: all 0.3s;
+          @include c.mq(sm) {
+            width: 30px;
+            height: 30px;
+          }
+        }
+  
+        &:hover::before {
+          right: 8px;
+        }
+  
+        &:hover::after {
+          background: c.$accent-color;
+        }
+      }
+    }
+  }
+  
+  .swiper-wrap {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .swiper {
+    margin: 90px auto 0;
+    @include c.mq(sm) {
+      width: calc(300 / 375 * 100%);
+      margin: 40px auto 0;
+    }
+  }
+  
+  .swiper-wrapper {
+    padding-bottom: (60 + 14px);
+    @include c.mq(sm) {
+      padding-bottom: 40px;
+    }
+  }
+  
+  .swiper-slide {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0;
+  }
+  
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+    margin: 0 10px;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background: #eaedea;
+    opacity: 1;
+    @include c.mq(sm) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #188807;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 18px;
+    height: 90px;
+    @include c.mq(sm) {
+      width: 9px;
+      height: 40px;
+    }
+  }
+  
+  .swiper-button-prev {
+    background: url(../img/slider-arrow.png) no-repeat center center / contain;
+    transform: translateY(-50%) rotate(180deg);
+    left: 11%;
+    @include c.mq(sm) {
+      left: 4%;
+    }
+  }
+  
+  .swiper-button-next {
+    background: url(../img/slider-arrow.png) no-repeat center center / contain;
+    transform: translateY(-50%);
+    right: 11%;
+    @include c.mq(sm) {
+      right: 4%;
+    }
+  }
+  
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    display: none;
+  }
+  
+  // ========================================================================
+  // service
+  // ========================================================================
+  
+  .service {
+    margin-top: 170px;
+    @include c.mq(sm) {
+      margin-top: 100px;
+    }
+  }
+  
+  .service-contents {
+    margin-top: 130px;
+    @include c.mq(md) {
+    }
+  
+    &__list {
+      position: relative;
+      display: flex;
+      @include c.mq(md) {
+        flex-direction: column;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: all 1s;
+      }
+  
+      &.is-active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+  
+      &:not(:first-child) {
+        margin-top: 352px;
+        @include c.mq(lg) {
+          margin-top: 250px;
+        }
+        @include c.mq(md) {
+          margin-top: 70px;
+        }
+      }
+  
+      &:nth-child(1) {
+        
+        .service-contents__texts {
+          &::after {
+            background: url(../img/service-number01.png) no-repeat center center /
+              contain;
+          }
+        }
+        .service-contents__sp-subtitle {
+          &::before {
+            background: url(../img/service-number01.png) no-repeat center center /
+              contain;
+          }
+        }
+      }
+  
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+        @include c.mq(md) {
+          flex-direction: column;
+        }
+  
+        .service-contents__texts {
+          margin-right: 80px;
+          margin-left: 0;
+          @include c.mq(lg) {
+            margin-right: 30px;
+          }
+          @include c.mq(md) {
+            margin: 0 auto;
+          }
+  
+          &::after {
+            background: url(../img/service-number02.png) no-repeat center center /
+              contain;
+          }
+        }
+  
+        .service-contents__subtitle {
+          font-size: 46px;
+          font-family: 'Mulish', sans-serif;
+          letter-spacing: 0.05em;
+          @include c.mq(lg) {
+            font-size: 38px;
+          }
+        }
+  
+        .service-contents__sp-subtitle {
+          font-size: 31px;
+          font-weight: bold;
+          font-family: 'Mulish', sans-serif;
+          letter-spacing: 0.05em;
+          @include c.mq(sm) {
+            font-size: 27px;
+          }
+  
+          &::before {
+            background: url(../img/service-number02.png) no-repeat center center /
+              contain;
+          }
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          top: -55%;
+          right: -40px;
+          width: 140px;
+          height: 780px;
+          background: url(../img/bg_parts_border.png) no-repeat center center / contain;
+          @include c.mq(lg) {
+            right: -30px;
+          }
+          @include c.mq(md) {
+            display: none;
+          }
+        }
+      }
+  
+      &:nth-child(3) {
+  
+        .service-contents__texts {
+          &::after {
+            background: url(../img/service-number03.png) no-repeat center center /
+              contain;
+          }
+        }
+  
+        .service-contents__sp-subtitle {
+          &::before {
+            background: url(../img/service-number03.png) no-repeat center center /
+              contain;
+          }
+        }
+      }
+  
+      &:nth-child(2n + 1) {
+  
+        &::before {
+          content: "";
+          position: absolute;
+          top: -35%;
+          left: -40px;
+          width: 140px;
+          height: 780px;
+          background: url(../img/bg_parts_border.png) no-repeat center center / contain;
+          transform: rotate(180deg);
+          @include c.mq(lg) {
+            left: -30px;
+          }
+          @include c.mq(md) {
+            display: none;
+          }
+        }
+      }
+    }
+  
+    &__sp-subtitle {
+      display: none;
+      font-size: 30px;
+      font-weight: bold;
+      @include c.mq(md) {
+        display: block;
+        position: relative;
+      @include c.mq(sm) {
+        font-size: 26px;
+      }
+  
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          width: 88px;
+          height: 86px;
+        }
+      }
+    }
+  
+    &__img {
+      width: 510px;
+      @include c.mq(lg) {
+        width: 290px;
+      }
+      @include c.mq(md) {
+        width: calc(208 / 335 * 100%);
+        margin: 30px auto 0;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__texts {
+      position: relative;
+      width: calc(100% - 590px);
+      margin-left: 80px;
+      @include c.mq(lg) {
+        width: calc(100% - 310px);
+        margin-top: 0;
+        margin-left: 30px;
+      }
+      @include c.mq(md) {
+        width: 80%;
+        margin: 0 auto;
+      }
+      @include c.mq(sm) {
+        width: 100%;
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: -60px;
+        right: 0;
+        width: 193px;
+        height: 175px;
+        @include c.mq(lg) {
+          width: 150px;
+          height: 150px;
+        }
+        @include c.mq(md) {
+          display: none;
+        }
+      }
+    }
+  
+    &__subtitle {
+      margin-top: 20px;
+      font-size: 44px;
+      font-weight: bold;
+      @include c.mq(lg) {
+        margin-top: 0;
+        font-size: 36px;
+      }
+      @include c.mq(md) {
+        display: none;
+      }
+    }
+  
+    &__text {
+      margin-top: 32px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 36px;
+      letter-spacing: 0.1em;
+      @include c.mq(lg) {
+        margin-top: 25px;
+        font-size: 18px;
+        line-height: 32px;
+      }
+      @include c.mq(md) {
+        margin-top: 28px;
+        font-size: 13.5px;
+        line-height: 24.3px;
+        letter-spacing: 0.15em;
+      }
+    }
+  
+    &__icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      @include c.mq(lg) {
+        justify-content: flex-start;
+        margin-top: 30px;
+      }
+      @include c.mq(md) {
+        display: none;
+      }
+    }
+  
+    &__icon {
+      width: 120px;
+      @include c.mq(lg) {
+        width: 70px;
+      }
+  
+      &:not(:first-child) {
+        margin-left: 40px;
+        @include c.mq(lg) {
+          margin-left: 3%;
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  
+  .line-area {
+    position: absolute;
+    top: 114%;
+    left: 50%;
+    width: 180px;
+    height: 226px;
+    transform: translateX(-50%);
+    @include c.mq(lg) {
+      top: 110%;
+      width: 140px;
+      height: 180px;
+    }
+    @include c.mq(md) {
+      display: none;
+    }
+  }
+  
+  .border-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .border-wrap01 {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #c4c4c4;
+      border-radius: 50%;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #c4c4c4;
+      border-radius: 50%;
+    }
+  }
+  
+  .border-wrap02 {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #c4c4c4;
+      border-radius: 50%;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 15px;
+      height: 15px;
+      background-color: #c4c4c4;
+      border-radius: 50%;
+    }
+  }
+  
+  .border-line {
+    position: absolute;
+    top: 7.5px;
+    width: 1px;
+    height: 0;
+    background-color: #c4c4c4;
+    transition: height 1s;
+  
+    &.is-active {
+      height: 120%;
+    }
+  }
+  
+  .border-line01 {
+    left: 7.5px;
+    transform: rotate(-38deg);
+    transform-origin: center top;
+    @include c.mq(lg) {
+      transform: rotate(-37deg);
+    }
+  }
+  
+  .border-line02 {
+    right: 7.5px;
+    transform: rotate(38deg);
+    transform-origin: center top;
+    @include c.mq(lg) {
+      transform: rotate(37deg);
+    }
+  }
+  
+  // ========================================================================
+  // about
+  // ========================================================================
+  
+  .about {
+    margin-top: 215px;
+    @include c.mq(sm) {
+      margin-top: 120px;
+    }
+  
+    &__title {
+      text-align: center;
+    }
+  }
+  
+  .about-contents {
+    position: relative;
+    padding-bottom: 234px;
+    margin-top: 190px;
+    background-color: #fff;
+    @include c.mq(lg) {
+      margin-top: 100px;
+    }
+    @include c.mq(sm) {
+      padding-bottom: 180px;
+      margin-top: 252px;
+    }
+  
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 260px;
+      @include c.mq(sm) {
+        width: 200px;
+        height: 140px;
+      }
+    }
+  
+    &::before {
+      top: -50px;
+      right: 100px;
+      background: url(../img/about_img1.jpg) no-repeat center center / contain;
+      @include c.mq(lg) {
+        display: none;
+      }
+      @include c.mq(sm) {
+        display: block;
+        top: (-140 + -72px);
+        right: 0;
+        background-size: cover;
+      }
+    }
+  
+    &::after {
+      bottom: -220px;
+      left: 140px;
+      background: url(../img/about_img2.jpg) no-repeat center center / contain;
+      @include c.mq(lg) {
+        left: 70px;
+      }
+      @include c.mq(sm) {
+        left: 0;
+        bottom: -200px;
+        background-size: cover;
+      }
+    }
+  
+    &__img {
+      width: 640px;
+      @include c.mq(lg) {
+        width: 540px;
+      }
+      @include c.mq(sm) {
+        width: calc(280 / 335 * 100%);
+        max-width: 390px;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__profile {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: (700 / 1200 * 100%);
+      padding: 40px 60px;
+      background: #fff;
+      box-shadow: 0px 10px 80px 0px #ececec;
+      z-index: 5;
+      @include c.mq(lg) {
+        top: 36%;
+        bottom: auto;
+        padding: 25px 40px;
+      }
+      @include c.mq(sm) {
+        top: 35%;
+        bottom: auto;
+        width: 250px;
+        padding: 26px 17px 38px;
+      }
+    }
+  
+    &__name {
+      color: c.$accent-color;
+      font-weight: 600;
+      font-family: 'Mulish', sans-serif;
+      @include c.mq(md) {
+        font-size: 15px;
+      }
+      @include c.mq(sm) {
+        font-size: 13px;
+      }
+  
+      span {
+        display: inline-block;
+        margin-top: 3px;
+        font-size: 26px;
+        font-weight: bold;
+        font-family: '游ゴシック体', YuGothic, '游ゴシック Medium',
+          'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', sans-serif;
+        @include c.mq(md) {
+          font-size: 23px;
+        }
+        @include c.mq(sm) {
+          font-size: 15px;
+        }
+      }
+    }
+  
+    &__text {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0.065em;
+      line-height: 32px;
+      @include c.mq(md) {
+        font-size: 15px;
+        line-height: 28px;
+      }
+      @include c.mq(sm) {
+        font-size: 12px;
+        line-height: 19.2px;
+        letter-spacing: 0.05em;
+      }
+    }
+  }

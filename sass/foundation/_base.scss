@@ -1,0 +1,27 @@
+@use '../config/' as *;
+
+//インナー
+.inner {
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: 0 auto;
+    box-sizing: content-box;
+    @include mq(lg) {
+      padding: 0 30px;
+    }
+    @include mq(sm) {
+      padding: 0 20px;
+    }
+}
+
+
+body {
+    font-family: '游ゴシック体', YuGothic, '游ゴシック Medium', 'Yu Gothic Medium',
+      '游ゴシック', 'Yu Gothic', sans-serif;
+    color: $font-color;
+  
+    &.is-fixed {
+      height: 100%;
+      overflow: hidden;
+    }
+}

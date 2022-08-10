@@ -1,0 +1,31 @@
+@use '../config/' as *;
+
+.title {
+    font-size: 72px;
+    font-family: 'Lexend Peta', sans-serif;
+    @include mq(lg) {
+      font-size: 67px;
+    }
+    @include mq(md) {
+      font-size: 53px;
+    }
+    @include mq(sm) {
+      font-size: 40px;
+    }
+  
+    span {
+      display: block;
+      margin-top: 10px;
+      font-size: 26px;
+      font-weight: bold;
+      font-family: '游ゴシック体', YuGothic, '游ゴシック Medium',
+        'Yu Gothic Medium', '游ゴシック', 'Yu Gothic', sans-serif;
+      letter-spacing: 0.125em;
+      @include mq(md) {
+        font-size: 23px;
+      }
+      @include mq(sm) {
+        font-size: 20px;
+      }
+    }
+  }

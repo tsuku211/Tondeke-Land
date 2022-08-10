@@ -1,0 +1,596 @@
+@use '../config/' as c;
+
+// ========================================================================
+// under-contact
+// ========================================================================
+
+.under-contact {
+    margin-top: 120px;
+    @include c.mq(sm) {
+      margin-top: 70px;
+    }
+  
+    &__title {
+      text-align: center;
+    }
+  }
+  
+  .contact-complete {
+    margin-top: 240px;
+    @include c.mq(md) {
+      margin-top: 170px;
+    }
+  }
+  
+  .contact-contents__progress {
+    margin-top: 80px;
+    text-align: center;
+    @include c.mq(sm) {
+      margin-top: 60px;
+    }
+  
+    .circle {
+      position: relative;
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      background-color: #fff;
+      font-weight: bold;
+      line-height: 120px;
+      border-radius: 50%;
+      border: 1px solid #eaedea;
+      @include c.mq(md) {
+        width: 90px;
+        height: 90px;
+        line-height: 90px;
+        font-size: 13px;
+      }
+      @include c.mq(sm) {
+        width: 70px;
+        height: 70px;
+        font-size: 10px;
+        line-height: 70px;
+      }
+  
+      &:not(:first-child) {
+        margin-left: 120px;
+        @include c.mq(sm) {
+          // margin-left: 48px;
+          margin-left: 30px;
+        }
+      }
+  
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 126px;
+          height: 1px;
+          background-color: #eaedea;
+          transform: translate(100%, -50%);
+          @include c.mq(sm) {
+            width: 35px;
+          }
+        }
+      }
+
+      &.current {
+        background-color: c.$accent-color;
+        color: #fff;
+      }
+    }
+  }
+  
+  .contact-contents__text {
+    width: 600px;
+    margin: 60px auto 0;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 27px;
+    // text-align: center;
+    @include c.mq(md) {
+      width: 100%;
+      margin-top: 40px;
+      font-size: 13px;
+      line-height: 23.4px;
+      // text-align: left;
+    }
+
+    &-input {
+        display: none;
+
+        &.current {
+            display: block;
+        }
+    }
+
+    &-confirm {
+        display: none;
+        text-align: center;
+        @include c.mq(sm) {
+            text-align: left;
+        }
+
+        &.current {
+            display: block;
+        }
+    }
+
+    &-complete {
+        display: none;
+        width: 700px;
+        font-size: 18px;
+        text-align: center;
+
+        &.current {
+            display: block;
+        }
+
+        span {
+            display: block;
+            margin-bottom: 50px;
+            font-size: 36px;
+        }
+    }
+  
+    br {
+      @include c.mq(sm) {
+        display: none;
+      }
+    }
+  }
+  
+  .check-text {
+    width: 100%;
+    text-align: center;
+    @include c.mq(sm) {
+      text-align: left;
+    }
+  }
+  
+  .complete-subtitle {
+    margin-top: 60px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    @include c.mq(md) {
+      margin-top: 40px;
+      font-size: 24px;
+    }
+  }
+  
+  .complete-text {
+    width: 100%;
+    margin-top: 40px;
+    font-size: 18px;
+    text-align: center;
+    @include c.mq(md) {
+      margin-top: 30px;
+      font-size: 13px;
+      line-height: 23.4px;
+    }
+    @include c.mq(sm) {
+      text-align: left;
+    }
+  }
+  
+  .top-btn {
+    margin-top: 60px;
+    text-align: center;
+    @include c.mq(md) {
+      margin-top: 40px;
+    }
+  }
+  
+  .top-btn a {
+    display: inline-block;
+    width: 220px;
+    padding: 21px 0;
+    background-color: c.$font-color;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    @include c.mq(md) {
+      width: 200px;
+      padding: 16px 0;
+      font-size: 14px;
+    }
+  }
+  
+  .contact-contents__form {
+    width: calc(800 / 1200 * 100%);
+    padding: 60px 80px;
+    margin: 60px auto 0;
+    background-color: #F7F8F7;
+    @include c.mq(lg) {
+      padding: 40px 40px;
+    }
+    @include c.mq(md) {
+      width: 100%;
+      padding: 30px 18px;
+      margin-top: 40px;
+      
+    }
+  }
+  
+  .form {
+    &__item {
+      &:not(:first-child) {
+        margin-top: 40px;
+        @include c.mq(md) {
+          margin-top: 26px;
+        }
+      }
+  
+      .label {
+        font-size: 16px;
+        font-weight: bold;
+        @include c.mq(md) {
+          font-size: 15px;
+        }
+        @include c.mq(sm) {
+          font-size: 13px;
+        }
+      }
+  
+      input,
+      textarea {
+        width: 100%;
+        padding: 20px;
+        margin-top: 12px;
+        background-color: #fff;
+        box-shadow: 0px 10px 80px 0px #ECECEC;
+        @include c.mq(md) {
+          margin-top: 5px;
+        }
+      }
+  
+      input {
+        height: 50px;
+      }
+  
+      textarea {
+      }
+  
+      &-radio {
+        [type="radio"] {
+          display: none;
+        }
+  
+        dd {
+          display: flex;
+          flex-direction: column;
+  
+          .mwform-radio-field-text {
+            position: relative;
+            display: inline-block;
+            padding-left: 32px;
+            margin-top: 16px;
+  
+            &::before {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 0;
+              width: 12px;
+              height: 12px;
+              background-color: #fff;
+              border: 1px solid #eaedea;
+              border-radius: 50%;
+              transform: translateY(-50%);
+            }
+  
+            &::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 0;
+              width: 12px;
+              height: 12px;
+              background-color: #188807;
+              border-radius: 50%;
+              transform: translateY(-50%);
+              display: none;
+            }
+          }
+        }
+  
+        [type="radio"]:checked + span {
+          &::after {
+            display: block;
+          }
+        }
+      }
+  
+      &-submit {
+        text-align: center;
+  
+        input {
+          width: 360px;
+          height: auto;
+          padding: 23px 0;
+          margin-top: 20px;
+          border: 2px solid #343933;
+          border-radius: 2px;
+          background-color: #343933;
+          color: #fff;
+          font-size: 24px;
+          font-weight: bold;
+          transition: all 0.2s;
+          box-shadow: none;
+          @include c.mq(sm) {
+            width: 200px;
+            padding: 14px 0;
+            margin-top: 4px;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+          }
+  
+          &:hover {
+            color: #343933;
+            background-color: #fff;
+          }
+        }
+      }
+  
+      &-checkbox {
+  
+        [type="checkbox"] {
+          display: none;
+        }
+        
+        a {
+          border-bottom: 1px solid c.$font-color;
+        }
+  
+        .mwform-checkbox-field-text {
+          position: relative;
+          display: inline-block;
+          padding-left: 35px;
+          @include c.mq(sm) {
+            padding-left: 28px;
+          }
+  
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border: 1px solid #f7f8f7;
+            border-radius: 1px;
+            transform: translateY(-50%);
+            @include c.mq(sm) {
+              width: 12px;
+              height: 12px;
+            }
+          }
+  
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 1px;
+            width: 14px;
+            height: 14px;
+            background: url(../img/check.png) no-repeat center center / contain;
+            transform: translateY(-50%);
+            display: none;
+            @include c.mq(sm) {
+              left: -1px;
+            }
+          }
+        }
+  
+        [type="checkbox"]:checked + span {
+          &::after {
+            display: block;
+          }
+        }
+  
+        label {
+          @include c.mq(md) {
+            font-size: 15px;
+          }
+          @include c.mq(sm) {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  
+    &__example {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      @include c.mq(sm) {
+        margin-top: 8px;
+        font-size: 11px;
+      }
+    }
+  }
+  
+  .input-confirm {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    margin-top: 12px;
+    line-height: 50px;
+    background-color: #fff;
+    box-shadow: 0px 10px 80px 0px #ECECEC;
+    @include c.mq(md) {
+      margin-top: 5px;
+    }
+  }
+  
+  .textarea-confirm {
+    width: 100%;
+    height: 224px;
+    padding: 20px;
+    margin-top: 12px;
+    background-color: #fff;
+    box-shadow: 0px 10px 80px 0px #ECECEC;
+      @include c.mq(md) {
+      margin-top: 5px;
+    }
+  }
+  
+  .label {
+    span {
+      position: relative;
+      display: inline-block;
+      padding-right: 48px;
+      text-align: center;
+      @include c.mq(sm) {
+        padding-right: 38px;
+      }
+  
+      &::after {
+        content: '必須';
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 38px;
+        height: 19px;
+        background: #ee7f66;
+        border-radius: 1px;
+        color: #fff;
+        font-size: 12px;
+        line-height: 19px;
+        transform: translateY(-50%);
+        @include c.mq(sm) {
+          width: 28px;
+          height: 16px;
+          font-size: 10px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+
+  .privacy-link {
+    padding-left: 35px;
+    font-size: 15px;
+    @include c.mq(sm) {
+      padding-left: 28px;
+      font-size: 13px;
+    }
+
+    a {
+        border-bottom: 1px solid c.$font-color;
+    }
+  }
+  
+  .check-submit {
+    display: flex;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    @include c.mq(sm) {
+      justify-content: center;
+    }
+      
+      .check-submit__prevbtn, .check-submit__nextbtn {
+        width: 220px;
+        padding: 21px 0;
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 2px;
+        @include c.mq(lg) {
+          width: 100%;
+          font-size: 22px;
+        }
+        @include c.mq(sm) {
+          max-width: 180px;
+          min-width: 110px;
+          padding: 14px 0;
+          margin-top: 4px;
+          font-size: 14px;
+        }
+      }
+    
+      .check-submit__prevbtn {
+        display: inline-block;
+        background-color: c.$font-color;
+        border: 2px solid #343933;
+        transition: all .2s;
+    
+        &:hover {
+          background-color: #fff;
+          color: c.$font-color;
+        }
+      }
+    
+      .check-submit__nextbtn {
+        margin-left: 40px;
+        background-color: c.$accent-color;
+        box-shadow: none;
+        border-color: c.$accent-color;
+        @include c.mq(sm) {
+            margin-left: 20px;
+        }
+    
+        &:hover {
+          background-color: #fff;
+          color: c.$accent-color;
+        }
+      }
+  }
+
+
+
+  //入力画面、確認画面での表示・非表示
+  .mw_wp_form_input {
+
+    .check-submit {
+        display: none;
+    }
+  }
+
+  .mw_wp_form_confirm {
+
+    .form__item-checkbox, .form__example {
+        display: none;
+    }
+
+    .label span {
+        &::after {
+            display: none;
+        }
+    }
+
+    dd {
+        width: 100%;
+        height: 50px;
+        padding-left: 20px;
+        margin-top: 12px;
+        background-color: #fff;
+        box-shadow: 0px 10px 80px 0px #ECECEC;
+        line-height: 50px;
+        @include c.mq(md) {
+          margin-top: 5px;
+        }
+    }
+
+    //textareaを可変にする
+    .form__item:nth-child(7) {
+      dd {
+        height: auto;
+        min-height: 50px;
+        padding: 10px 20px;
+        line-height: normal;
+      }
+    }
+
+    .privacy-link {
+        display: none;
+    }
+  }
+

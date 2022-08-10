@@ -1,0 +1,40 @@
+@use '../config/' as *;
+
+.bg-grid {
+    position: relative;
+    display: block;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+  
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 195px;
+      background: url(../img/bg_parts_grid.png) no-repeat center center / contain;
+      z-index: -1;
+      @include mq(lg) {
+        width: 200px;
+        height: 164px;
+      }
+      @include mq(md) {
+        width: 100px;
+        height: 83px;
+      }
+      @include mq(sm) {
+        width: 96px;
+        height: 73px;
+      }
+    }
+  
+    &::before {
+      bottom: 0;
+      left: -114px;
+    }
+  
+    &::after {
+      top: 80px;
+      right: 0;
+    }
+  }

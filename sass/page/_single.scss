@@ -1,0 +1,149 @@
+@use '../config/' as c;
+
+// ========================================================================
+// single
+// ========================================================================
+
+.work {
+    margin-top: 120px;
+    @include c.mq(sm) {
+      margin-top: 70px;
+    }
+  
+    &__title {
+      text-align: center;
+  
+      span {
+        font-size: 20px;
+        font-weight: 300;
+        font-family: 'Mulish', sans-serif;
+        letter-spacing: 0.05em;
+      }
+    }
+  }
+  
+  .work-contents {
+    margin-top: 80px;
+    @include c.mq(sm) {
+      margin-top: 60px;
+    }
+  
+    &__img {
+      width: calc(1000 / 1200 * 100%);
+      margin: 0 auto;
+      @include c.mq(sm) {
+        width: 100%;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__texts {
+      width: calc(800 / 1200 * 100%);
+      margin: 60px auto 0 auto;
+      @include c.mq(md) {
+        width: 70%;
+      }
+      @include c.mq(sm) {
+        width: 100%;
+        margin-top: 30px;
+      }
+  
+      span {
+        font-size: 18px;
+        @include c.mq(sm) {
+          font-size: 15px;
+        }
+      }
+  
+      dl {
+        margin-top: 30px;
+      }
+    }
+  
+    &__definition {
+      display: flex;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: 'Mulish', sans-serif;
+      @include c.mq(sm) {
+        font-size: 12px;
+      }
+  
+      &:not(:first-child) {
+        margin-top: 20px;
+        @include c.mq(sm) {
+          margin-top: 16px;
+        }
+      }
+  
+      dt {
+        width: 172px;
+        font-weight: 300;
+        @include c.mq(sm) {
+          width: 153px;
+        }
+      }
+  
+      dd {
+        width: calc(100% - 172px);
+      }
+  
+      a {
+        border-bottom: 1px solid c.$font-color;
+      }
+    }
+  
+    &__text {
+      margin-top: 34px;
+      font-size: 15px;
+      line-height: 27px;
+      letter-spacing: 0.015em;
+      @include c.mq(sm) {
+        margin-top: 24px;
+        font-size: 13px;
+        line-height: 23.4px;
+      }
+    }
+  
+    &__video {
+      width: 800px;
+      height: 450px;
+      margin: 80px auto 0;
+      background-color: #c4c4c4;
+      display: none;
+      @include c.mq(lg) {
+        width: (800 / 1200 * 100%);
+        height: auto;
+        padding-top: (450 / 800 * 100%);
+      }
+      @include c.mq(sm) {
+        width: 100%;
+        margin-top: 40px;
+      }
+    }
+  }
+  
+  .other-works {
+    margin-top: 160px;
+    @include c.mq(sm) {
+      margin-top: 80px;
+    }
+  
+    &__title {
+      font-size: 56px;
+      text-align: center;
+      @include c.mq(lg) {
+        font-size: 50px;
+      }
+      @include c.mq(md) {
+        font-size: 40px;
+      }
+      @include c.mq(sm) {
+        font-size: 25px;
+      }
+    }
+  }

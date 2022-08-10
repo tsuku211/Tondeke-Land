@@ -1,0 +1,64 @@
+@use '../config/' as c;
+
+.breadcrumb {
+    position: relative;
+    margin-top: 120px;
+    @include c.mq(sm) {
+      margin-top: 90px;
+    }
+  
+    span {
+      position: relative;
+      display: inline-block;
+      font-size: 14px;
+      font-family: 'Mulish', sans-serif;
+      @include c.mq(sm) {
+        font-size: 12px;
+      }
+  
+      &:not(:first-child) {
+        margin-left: 5px;
+        @include c.mq(sm) {
+          margin-left: 4px;
+        }
+      }
+  
+      &:first-child {
+        font-size: 14px;
+        font-weight: 600;
+        @include c.mq(sm) {
+          font-size: 12px;
+        }
+      }
+  
+      &:last-child {
+        color: #9c9e9b;
+        letter-spacing: 0.02em;
+      }
+    }
+  
+    &-inner {
+      position: relative;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -60px;
+        left: 100px;
+        width: 137px;
+        height: 18px;
+        background: url(../img/bg_parts_slash.png) no-repeat center center / contain;
+        @include c.mq(md) {
+          left: 0;
+          width: 100px;
+          height: 15px;
+        }
+        @include c.mq(sm) {
+          bottom: (-38px + -7px);
+          width: 58px;
+          height: 7px;
+        }
+      }
+    
+    }
+  }
