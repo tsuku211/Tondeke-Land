@@ -7,7 +7,7 @@
 .under-footer{
     margin-top: 100px;
     @include c.mq(sm) {
-      margin-top: 0;
+      margin-top: 50px;
     }
   }
   

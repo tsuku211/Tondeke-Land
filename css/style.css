@@ -2118,9 +2118,19 @@ body.is-fixed {
 }
 .contact-contents__text-complete {
   display: none;
-  width: 700px;
+  width: 100%;
   font-size: 18px;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .contact-contents__text-complete {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact-contents__text-complete {
+    text-align: left;
+  }
 }
 .contact-contents__text-complete.current {
   display: block;
@@ -2129,6 +2139,17 @@ body.is-fixed {
   display: block;
   margin-bottom: 50px;
   font-size: 36px;
+}
+@media screen and (max-width: 768px) {
+  .contact-contents__text-complete span {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact-contents__text-complete span {
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
 @media screen and (max-width: 600px) {
   .contact-contents__text br {
@@ -2586,7 +2607,7 @@ body.is-fixed {
 }
 @media screen and (max-width: 600px) {
   .under-footer {
-    margin-top: 0;
+    margin-top: 50px;
   }
 }
 

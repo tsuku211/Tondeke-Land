@@ -120,9 +120,15 @@
 
     &-complete {
         display: none;
-        width: 700px;
+        width: 100%;
         font-size: 18px;
         text-align: center;
+        @include c.mq(md) {
+          font-size: 13px;
+        }
+        @include c.mq(sm) {
+          text-align: left;
+        }
 
         &.current {
             display: block;
@@ -132,6 +138,13 @@
             display: block;
             margin-bottom: 50px;
             font-size: 36px;
+            @include c.mq(md) {
+              font-size: 24px;
+            }
+            @include c.mq(sm) {
+              margin-bottom: 30px;
+              text-align: center;
+            }
         }
     }
   
