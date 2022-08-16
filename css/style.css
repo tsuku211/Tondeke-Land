@@ -1939,6 +1939,8 @@ body.is-fixed {
 }
 .work-contents__definition a {
   border-bottom: 1px solid #343933;
+  word-wrap: break-word;
+  line-height: 16px;
 }
 .work-contents__text {
   margin-top: 34px;
