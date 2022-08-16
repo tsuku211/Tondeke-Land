@@ -731,14 +731,12 @@
   
   .about-contents {
     position: relative;
-    padding-bottom: 234px;
     margin-top: 190px;
     background-color: #fff;
     @include c.mq(lg) {
       margin-top: 100px;
     }
     @include c.mq(sm) {
-      padding-bottom: 180px;
       margin-top: 252px;
     }
   
@@ -771,14 +769,17 @@
   
     &::after {
       bottom: -220px;
-      left: 140px;
+      left: 100px;
       background: url(../img/about_img2.jpg) no-repeat center center / contain;
       @include c.mq(lg) {
-        left: 70px;
+        left: 40px;
+      }
+      @include c.mq(md) {
+        bottom: -300px;
       }
       @include c.mq(sm) {
         left: 0;
-        bottom: -200px;
+        bottom: -180px;
         background-size: cover;
       }
     }
@@ -800,24 +801,23 @@
     }
   
     &__profile {
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      position: relative;
       width: (700 / 1200 * 100%);
       padding: 40px 60px;
+      margin-top: -120px;
+      margin-left: auto;
       background: #fff;
-      box-shadow: 0px 10px 80px 0px #ececec;
-      z-index: 5;
+      box-shadow: 0 10px 80px 0 #ececec;
       @include c.mq(lg) {
-        top: 36%;
-        bottom: auto;
         padding: 25px 40px;
       }
+      @include c.mq(md) {
+        width: 75%;
+      }
       @include c.mq(sm) {
-        top: 35%;
-        bottom: auto;
-        width: 250px;
-        padding: 26px 17px 38px;
+        width: 85%;
+        padding: 26px 17px 26px;
+        margin-top: -16vw;
       }
     }
   
