@@ -2234,6 +2234,7 @@ body.is-fixed {
 }
 @media screen and (max-width: 1024px) {
   .contact-contents__form {
+    width: 600px;
     padding: 40px 40px;
   }
 }
@@ -2579,24 +2580,21 @@ body.is-fixed {
   display: none;
 }
 .mw_wp_form_confirm dd {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
   width: 100%;
-  height: 50px;
-  padding-left: 20px;
+  min-height: 50px;
+  padding: 10px 20px;
   margin-top: 12px;
   background-color: #fff;
   box-shadow: 0px 10px 80px 0px #ECECEC;
-  line-height: 50px;
+  line-height: 25px;
 }
 @media screen and (max-width: 768px) {
   .mw_wp_form_confirm dd {
     margin-top: 5px;
   }
-}
-.mw_wp_form_confirm .form__item:nth-child(7) dd {
-  height: auto;
-  min-height: 50px;
-  padding: 10px 20px;
-  line-height: normal;
 }
 .mw_wp_form_confirm .privacy-link {
   display: none;
